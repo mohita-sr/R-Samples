@@ -1,10 +1,10 @@
 {
-    "contents" : "",
+    "contents" : "print \"Hello World\"\n",
     "created" : 1454189288690.000,
-    "dirty" : false,
+    "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "397520318",
     "id" : "FAFDAC39",
     "lastKnownWriteTime" : 1454189308,
     "path" : "~/Documents/R Projects/Sample 1.R",
