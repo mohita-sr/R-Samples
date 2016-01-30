@@ -1,12 +1,12 @@
 {
-    "contents" : "print \"Hello World\"\n",
+    "contents" : "print (\"Hello World\")\n",
     "created" : 1454189288690.000,
-    "dirty" : true,
+    "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "397520318",
+    "hash" : "2833233423",
     "id" : "FAFDAC39",
-    "lastKnownWriteTime" : 1454189308,
+    "lastKnownWriteTime" : 1454190097,
     "path" : "~/Documents/R Projects/Sample 1.R",
     "project_path" : "Sample 1.R",
     "properties" : {
