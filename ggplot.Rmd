@@ -1,0 +1,96 @@
+---
+title: "ggplot Notebook"
+output: html_notebook
+---
+
+ggplot2 is a data visualization package. We can create different types of graphs and charts using the ggplot() in the ggplot2 library.
+
+We create a base layer by specifying the data.
+A layer combines data, aesthetic mapping, a geom (geometric object), a stat (statistical transformation), and a position adjustment. Typically, we create layers using a geom_ function
+
+
+
+We start by loading the ggplot2 library
+
+```{r}
+require("ggplot2")
+```
+
+
+
+
+Load cars dataset in a dataframe
+
+```{r}
+#plot(cars)
+
+df_cars <- cars
+```
+
+
+
+*********** - SCATTERPLOT - ***************
+
+
+
+Create a scatterplot of speed v/s distance
+
+```{r}
+g <- ggplot(df_cars, aes(x=speed, y=dist)) + geom_point()
+g
+```
+
+
+
+We could also zoom into a section of the graph by mentioning the coordinates
+
+```{r}
+g_new <- g + coord_cartesian(xlim = c(10,15), ylim = c(25,50))
+g_new
+```
+
+
+
+
+************ - HISTOGRAM - ****************
+
+
+
+Load mtcars dataset in a dataframe
+
+```{r}
+df_cars <- mtcars
+```
+
+Create a basic histogram of the data with weight on x-axis, and a count of weight on y-axis
+
+```{r}
+ggplot(df_cars, aes(x=wt)) + geom_histogram()
+```
+
+We could specify the bin-width, the outline color and the fill color of the histogram
+
+```{r}
+g <- ggplot(df_cars, aes(x=wt)) + geom_histogram(binwidth = 0.5, color="blue", fill="white")
+g
+```
+
+
+
+If we want to plot the mean of the vertical distribution, we could draw a vertical line
+
+```{r}
+g + geom_vline(aes(xintercept=mean(wt)), color="red", linetype="dashed", size=1)
+
+```
+
+
+We could also stack up another layer showing the density of the data on top of this histogram. Note that the density (pdf or pmf) always sums up to 1
+
+```{r}
+ggplot(df_cars, aes(x=wt)) +
+  geom_histogram(binwidth = 0.5, aes(y = ..density..), 
+                 alpha=0.3, color="blue", fill="white") +
+  geom_density(alpha=0.2, fill="red")
+```
+
